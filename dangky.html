@@ -1,0 +1,109 @@
+<style>
+    @media (min-width: 1025px) {
+        .h-custom {
+            height: 100vh !important;
+        }
+    }
+</style>
+<div class="alert alert-danger mt-3" ng-hide="dktc" role="alert">
+    Email hoặc tên đăng nhập của bạn đã tồn tại
+</div>
+<section class="row" style="min-height: 100px;">
+    <h2 class="text-center mt-3">Form đăng ký thành viên</h2>
+    <form class="form-floating w-100 m-auto row mt-3" name="frmthemtl">
+        <div class="col-6">
+            <!-- username -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="tenDN" placeholder="name@example.com" name="tenDN"
+                    ng-model="tenDN" required ng-minlength="3" ng-maxlength="20">
+                <label for="tenTheLoai">Tên đăng nhập <span class="text-danger">*</span></label>
+                <em ng-show="frmthemtl.tenDN.$invalid" class="text-danger">Nhập tên đăng nhập từ 3 - 20 kí tự</em>
+            </div>
+            <!-- username -->
+            <!-- password -->
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="passWord" placeholder="Password" name="passWord"
+                    ng-model="passWord" required>
+                <label for="passWord">Mật khẩu <span class="text-danger">*</span></label>
+                <em ng-show="frmthemtl.passWord.$invalid" class="text-danger">Nhập mật khẩu từ 1 - 23 ký tự</em>
+            </div>
+            <!-- password -->
+            <!-- fullname -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="hoTen" name="hoten" placeholder="name@example.com"
+                    ng-model="hoTen" required>
+                <label for="hoTen">Họ tên <span class="text-danger">*</span></label>
+                <em ng-show="frmthemtl.hoten.$invalid" class="text-danger">Họ tên không được để trống</em>
+            </div>
+            <!-- fullname -->
+            <!-- email -->
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Email" name="email" ng-model="email"
+                    required ng-min="1">
+                <label for="email">Email <span class="text-danger">*</span></label>
+                <em ng-show="frmthemtl.email.$invalid" class="text-danger">Email chưa đúng định dạng</em>
+            </div>
+            <!-- email -->
+        </div>
+        <div class="col-6">
+            <!-- gioitinh -->
+            <div class="radio-container row border py-3 mx-0 rounded-2">
+                <label class="col-6">Giới tính <span class="text-danger">*</span></label>
+                <div class="form-check col-3">
+                    <input class="form-check-input" type="radio" name="gioitinh" ng-value="'true'" ng-model="gioitinh">
+                    <label class="form-check-label">
+                        Nam
+                    </label>
+                </div>
+                <div class="form-check col-3">
+                    <input class="form-check-input" type="radio" name="gioitinh" ng-value="'false'" ng-model="gioitinh"
+                        checked required>
+                    <label class="form-check-label">
+                        Nữ
+                    </label>
+                </div>
+
+            </div><em ng-show="frmthemtl.gioitinh.$invalid" class="text-danger col-12">Giới tính không được bỏ
+                trống</em>
+            <div class="mb-3"></div>
+
+            <!-- gioitinh -->
+            <!-- ngaysinh -->
+
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="ngaysinh" placeholder="Password" name="ngaysinh"
+                    ng-model="ngaysinh" required>
+                <label for="ngaysinh">Ngày sinh <span class="text-danger">*</span></label>
+                <em ng-show="frmthemtl.ngaysinh.$invalid" class="text-danger">Ngày sinh không được bỏ trống</em>
+                <!-- ngaysinh -->
+            </div>
+            <!-- hoc phi -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="hocphi" placeholder="Password" name="hocphi"
+                    ng-model="hocphi" required ng-min="1">
+                <label for="floatingSelectGrid">Học phí <span class="text-danger">*</span></label>
+                <em ng-show="frmthemtl.hocphi.$invalid" class="text-danger">Học phí không được bỏ trống và phải là số
+                    dương</em>
+            </div>
+            <!-- hoc phi -->
+            <!-- diem -->
+
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="diem" placeholder="Password" name="diem" ng-model="diem"
+                    required ng-min="1" ng-max="10">
+                <label for="diem">Điểm <span class="text-danger">*</span></label>
+                <em ng-show="frmthemtl.diem.$invalid" class="text-danger">Điểm không được bỏ trống trong khoảng từ 1 -
+                    10</em>
+            </div>
+            <!-- diem -->
+
+        </div>
+        <div>Đã có tài khoản? <a href="#!dangnhap">Đăng nhập tại đây</a></div>
+        <div class="button-container mt-3">
+            <button ng-disabled="frmthemtl.$invalid" class="btn btn-primary px-4 py-2" type="submit"
+                ng-click="dangky()">Đăng ký</button>
+            <button class="btn btn-secondary px-4 py-2" type="button" ng-hide="frmthemtl.$pristine"
+                ng-click="huy()">Hủy</button>
+        </div>
+    </form>
+</section>

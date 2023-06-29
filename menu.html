@@ -1,0 +1,44 @@
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#!index"><i class="bi bi-house-door-fill"></i>&nbsp;Trang chủ</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#!gioithieu">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!lienhe">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!gopy">Góp ý</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!hoidap">Hỏi đáp</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Tài khoản
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li ng-hide="hoten"><a class="dropdown-item" href="#!dangnhap">Đăng nhập</a></li>
+                        <li ng-hide="!hoten"><a class="dropdown-item" href="#!quenmatkhau">Quên mật khẩu</a></li>
+                        <li ng-hide="hoten"><a class="dropdown-item" href="#!dangky">Đăng ký thành viên</a></li>
+                        <li ng-hide="!hoten">
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li ng-hide="!hoten"><a class="dropdown-item" ng-click="dangxuat()">Đăng xuất</a></li>
+                        <li ng-hide="!hoten"><a class="dropdown-item" href="#doimatkhau">Đổi mật khẩu</a></li>
+                        <li ng-hide="!hoten"><a class="dropdown-item" href="#capnhatmatkhau">Cập nhật mật khẩu</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>

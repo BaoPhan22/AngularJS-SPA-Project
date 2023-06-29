@@ -1,0 +1,9 @@
+<ul class="list-group list-group-flush">
+    <li class="list-group-item" ng-repeat="s in cacmonhoc | orderBy:'Name' | limitTo:show:0">
+        <a href="#!tracnghiem/{{s.Id}}/{{s.Name}}" class="text-primary text-decoration-none">
+            {{s.Name|uppercase}}
+        </a>
+    </li>
+    <button class="btn btn-light" ng-click="showAll(true)" ng-if="show==10">Hiện tất cả</button>
+    <button class="btn btn-light" ng-click="showAll(false)" ng-hide="show==10">Ẩn bớt</button>
+</ul>

@@ -1,0 +1,9 @@
+<div class="alert alert-primary mt-3" role="alert">
+    <p>Chúc mừng bạn đã hoàn thành bài kiểm tra</p>
+    <p>Họ tên: <strong>{{$parent.hoten}}</strong> </p>
+    <p>Tổng số điểm: <strong>{{Score}} / {{caccauhoi.length}}</strong> </p>
+    <p>Thời gian làm bài: <strong>{{time}}s</strong></p>
+    <p>Tên môn học: <strong>{{tenMH}}</strong></p>
+    <p>ID môn học: <strong>{{idMH}}</strong></p>
+    <p>Kết quả: <strong> {{(totalScore/caccauhoi.length*10)>=5?'PASS':'FAIL'}} </strong></p>
+</div>

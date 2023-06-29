@@ -1,0 +1,32 @@
+﻿let listsv = [
+  {
+    username: "baoptq",
+    password: "iloveyou",
+    fullname: "Phan Trần Quốc Bảo",
+    email: "baoptq@gmail.com",
+    gender: "true",
+    birthday: "2003-04-22",
+    schoolfee: "1500000",
+    marks: "0",
+  },
+  {
+    username: "baoptq1",
+    password: "iloveyou1",
+    fullname: "Phan Trần Quốc Bảo1",
+    email: "baoptq1@gmail.com",
+    gender: "false",
+    birthday: "2003-04-22",
+    schoolfee: "1500001",
+    marks: "1",
+  },
+  {
+    username: "baoptq2",
+    password: "iloveyou",
+    fullname: "Phan Trần Quốc Bảo2",
+    email: "baoptq2@gmail.com",
+    gender: "true",
+    birthday: "2003-04-22",
+    schoolfee: "1500002",
+    marks: "2",
+  },
+];

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp" ng-controller="myctrl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website thi trắc nghiệm</title>
+    <link rel="icon" type="image/x-icon" href="/images/fpt400-784798-1412985492.jpg">
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Boostrap -->
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.9/angular-route.min.js"></script>
+    <!-- AngularJS -->
+
+    <style>
+        header.row {
+            min-height: 200px;
+        }
+
+        /* header.row img {
+            width: 1200px;
+            height: 344px;
+        } */
+
+        nav.row {
+            min-height: 80px;
+        }
+
+        article,
+        aside {
+            min-height: 300px;
+        }
+
+        footer.row {
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <header class="row"> <img src="images/banner.jpg" class="w-100 p-0" alt=""></header> -->
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" ng-include="'header.html'">
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light row" ng-include="'menu.html'"></nav>
+
+        <div class="row">
+            <article class="col-9" ng-view>
+            </article>
+            <aside class="col-3 pe-0 mt-3 mb-3">
+                <div class="card w-100" style="width: 18rem;">
+                    <div class="card-header text-uppercase">
+                        Các môn học
+                    </div>
+                    <div class="listmonhoc" ng-include="'cacmonhoc.html'"></div>
+                </div>
+            </aside>
+        </div>
+        <footer class="row bg-dark text-white text-center d-block">
+            PS21424 - Phan Trần Quốc Bảo <br>
+            Email: baoptqps21424@fpt.edu.vn
+        </footer>
+    </div>
+</body>
+<script src="db/Students.js"></script>
+<script>
+    let app = angular.module('myapp', ['ngRoute']);
+    app.config(function ($routeProvider) {
+        $routeProvider.when('/gioithieu', { templateUrl: 'gioithieu.html', title: 'Giới thiệu' })
+            .when('/lienhe', { templateUrl: 'lienhe.html' })
+            .when('/dangnhap', { templateUrl: 'dangnhap.html', controller: 'taikhoan' })
+            .when('/dangky', { templateUrl: 'dangky.html', controller: 'taikhoan' })
+            .when('/result/:idMH/:tenMH/:tglb/:totalScore', { templateUrl: 'result.html', controller: 'tnctrl' })
+            .when('/tracnghiem/:idMH/:tenMH', { templateUrl: "tracnghiem.html", controller: 'tnctrl' })
+            .otherwise({ templateUrl: 'hello.html' });
+    });
+</script>
+<script src="controller/defaultcontroller.js"></script>
+<script src="controller/accountcontroller.js"></script>
+<script src="controller/tracnghiem.js"></script>
+
+</html>

@@ -1,0 +1,57 @@
+<style>
+    @media (min-width: 1025px) {
+        .h-custom {
+            height: 100vh !important;
+        }
+    }
+</style>
+
+
+<section class="row mt-3" style="min-height: 100px;">
+    <h2 class="text-center">Form đăng nhập</h2>
+    <form class="w-50 m-auto p-3" name="formdangnhap">
+        <div class="mb-3">
+            <label for="cd" class="form-label">Tên đăng nhập</label>
+            <input type="text" class="form-control" id="cd" ng-model="username">
+        </div>
+        <div class="mb-3">
+            <label for="cr" class="form-label">Mật khẩu</label>
+            <input type="password" class="form-control" id="cr" ng-model="password">
+        </div>
+        <div class="mb-3">Chưa có tài khoản?<a href="#!dangky"> Đăng ký tại đây</a></div>
+        <button type="submit" class="btn btn-primary" ng-click="dangnhap()">Đăng nhập</button>
+        <!-- <button type="button" class="btn btn-secondary" ng-click="dx()">Đăng xuất</button> -->
+    </form>
+</section>
+<!-- <script src="db/Students.js"></script>
+<script>
+    let app = angular.module('myapp', []);
+    app.controller('myctrl', myfnc);
+    function myfnc($scope) {
+        $scope.dx = function () {
+            sessionStorage.clear();
+        }
+        $scope.dn = function () {
+            let u = $scope.u;
+            let p = $scope.p;
+            let tc = false;
+            let motsv;
+            for (let i = 0; i < listsv.length; i++) {
+                motsv = listsv[i];
+                if (u == motsv.username && p == motsv.password) {
+                    tc = true;
+                    break;
+                }
+            }
+            console.log(tc);
+            if (tc === true) {
+                sessionStorage.setItem('username', motsv.username);
+                sessionStorage.setItem('fullname', motsv.fullname);
+                sessionStorage.setItem('email', motsv.email);
+                document.location = 'index.html';
+            } else {
+                alert('Đăng nhập thất bại');
+            }
+        }
+    }
+</script> -->
